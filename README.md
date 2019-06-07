@@ -12,7 +12,12 @@
     - REACT_APP_BASE_URL=http://localhost:5000 (the same port as above)
 - `cd .. && npm run dev`
 
+## Sign in
 ![](screenshots/1.png)
+
+## add & edit & delete & view a Task
 ![](screenshots/2.png)
+## search for a Task
 ![](screenshots/3.png)
+## view profile & update info & update image
 ![](screenshots/4.png)

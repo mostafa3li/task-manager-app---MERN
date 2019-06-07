@@ -38,7 +38,7 @@ router.post("/users/login", async (req, res) => {
 router.post("/users/logout", auth, async (req, res) => {
   try {
     const { user } = req;
-    user.tokens = user.tokens.filter(token => token.token !== req.token);
+    user.tokens = user.tokens.filter((token) => token.token !== req.token);
     await user.save();
     res.send("Successfully logged out");
   } catch (error) {
@@ -46,7 +46,7 @@ router.post("/users/logout", auth, async (req, res) => {
   }
 });
 
-//! user (Log out - single session)
+//! user (Log out - All sessions)
 router.post("/users/logoutAll", auth, async (req, res) => {
   try {
     const { user } = req;
@@ -84,9 +84,7 @@ router.patch("/users/me", auth, async (req, res) => {
   //* if user updates a property that doesn't exist
   const updates = Object.keys(req.body);
   const allowedUpdates = ["name", "email", "password", "age"];
-  const isValidOperation = updates.every(update =>
-    allowedUpdates.includes(update)
-  );
+  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
   if (!isValidOperation) {
     return res.status(400).send("ERROR: Invalid Operation");
   }
@@ -95,7 +93,7 @@ router.patch("/users/me", auth, async (req, res) => {
   try {
     //* this change to able the hashing middleware to run (on save) on password if updated
     const { user } = req;
-    updates.forEach(update => (user[update] = req.body[update]));
+    updates.forEach((update) => (user[update] = req.body[update]));
     await user.save();
     //*
     res.send(user);

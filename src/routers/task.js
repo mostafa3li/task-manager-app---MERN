@@ -22,6 +22,7 @@ router.post("/tasks", auth, async (req, res) => {
 // GET /tasks?completed=true    (filter)
 // GET /tasks?limit=10&skip=0   (pagination)
 // GET /tasks?sortBy=createdAt_asc
+// ?sortBy=createdAt:asc&completed=true&limit=1&skip=1
 router.get("/tasks", auth, async (req, res) => {
   const { user } = req;
   const match = {};
@@ -77,9 +78,7 @@ router.patch("/tasks/:id", auth, async (req, res) => {
   //*
   const updates = Object.keys(req.body);
   const allowedUpdates = ["description", "completed"];
-  const isValidOperation = updates.every(update =>
-    allowedUpdates.includes(update)
-  );
+  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
   if (!isValidOperation) {
     return res.status(400).send("ERROR: invalid operation");
   }
@@ -92,7 +91,7 @@ router.patch("/tasks/:id", auth, async (req, res) => {
     if (!task) {
       return res.status(404).send("task not found or You're not authenticated");
     }
-    updates.forEach(update => (task[update] = req.body[update]));
+    updates.forEach((update) => (task[update] = req.body[update]));
     await task.save();
     //*
     res.send(task);

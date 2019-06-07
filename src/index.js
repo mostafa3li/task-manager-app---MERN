@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 require("./db/mongoose");
 const userRouter = require("./routers/user");
 const taskRouter = require("./routers/task");
@@ -6,6 +7,7 @@ const taskRouter = require("./routers/task");
 const app = express();
 const port = process.env.PORT;
 
+app.use(cors());
 //! automatically parse incoming JSON to an OBJECT
 app.use(express.json());
 //*=======================================

@@ -7,7 +7,13 @@ const sendWelcomeEmail = (email, name) => {
     to: email,
     from: "Mostapha.a.aly@gmail.com",
     subject: "Thanks for joining in",
-    text: `Welcome to my Task manager app, ${name}.`
+    text: `Welcome to my Task manager app, ${name}.
+    I hope you like it.
+    
+    regards 
+    Mostafa Ali
+    linkedin.com/in/mostafa3li/ 
+    `
   });
 };
 

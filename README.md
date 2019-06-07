@@ -7,13 +7,13 @@
 - `cd task-manager-app/ && npm install`
 - `touch .env`
 **==> add the following environment variables:**
-    - PORT=5000 (ex.)
+    - PORT=5000         (5000 is an example)
     - MONGODB_URL=mongodb://localhost:27017/task-manager-api
-    - JWT_SECRET=secret (ex.)
+    - JWT_SECRET=secret (secret is an example)
 - `cd client/ && npm install`
 - `touch .env`
 **==> add the following environment variables:**
-    - REACT_APP_BASE_URL=http://localhost:5000 (the same port as above)
+    - REACT_APP_BASE_URL=http://localhost:5000      (the same port 5000 as used above)
 - `cd .. && npm run dev`
 
 ## Sign in

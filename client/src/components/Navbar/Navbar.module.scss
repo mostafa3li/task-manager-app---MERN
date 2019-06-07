@@ -1,0 +1,14 @@
+.logo {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}

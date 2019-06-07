@@ -7,7 +7,7 @@
 - `cd task-manager-app/ && npm install`
 - `touch .env`
 **==> add the following environment variables:**
-    - PORT=5000 =>**5000 is an example**
+    - PORT=5000 **(5000 is an example)**
     - MONGODB_URL=mongodb://localhost:27017/task-manager-api
     - JWT_SECRET=secret **(secret is an example)**
 - `cd client/ && npm install`

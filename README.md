@@ -3,7 +3,7 @@
 ##### with all authentication and authorization handled in the backend using `Node.js` (JWT, Validation, Sanitization)
 ##### a friendly frontend app using `React.js` (Routing, Context API, React hooks, MaterialUI)
 
-> ###### First time configurations
+## First time configurations
 - `git clone https://github.com/mostafa3li/task-manager-app.git`
 - `cd task-manager-app/ && npm install`
 - `touch .env`
@@ -17,9 +17,10 @@
     - REACT_APP_BASE_URL=http://localhost:5000      **(the same port 5000 as used above)**
 - `cd .. && npm run dev`
 
-> ###### Running development server Everytime 
+## Running development server Everytime 
 - `cd task-manager-app/ && npm run dev`
 
+-----------------------------------------------------------------------------------------------------
 
 ## Sign in
 ![](screenshots/1.png)
